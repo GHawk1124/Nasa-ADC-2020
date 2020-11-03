@@ -38,3 +38,5 @@
 .DS_Store
 assets/
 build/
+__pycache__/
+include/verts.hpp

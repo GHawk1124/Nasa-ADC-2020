@@ -2,8 +2,7 @@ from urllib.request import urlopen
 from zipfile import ZipFile
 import os
 
-
-if __name__ == '__main__':
+def downloadAssets():
     if not os.path.exists("./assets"):
         print("Creating Asset Directories")
         os.mkdir("./assets")
@@ -52,3 +51,6 @@ if __name__ == '__main__':
             print(e)
 
     print("Program Successful")
+
+if __name__ == '__main__':
+    downloadAssets()
