@@ -6,6 +6,7 @@ set(BIN_NAME "apc")
 set(EXECUTABLE_OUTPUT_PATH "./bin")
 
 file(GLOB SOURCES "src/*.cpp")
+add_subdirectory("./external/imgui")
 
 include_directories("./include")
 include_directories("./external")
