@@ -1,17 +1,15 @@
-from math import sin, cos, atan, tan
+with open("../assets/data/fy20_adc_data_file_88_degrees.csv") as datafile:
+	final = []
+	for line in datafile.readlines():
+		intermediary = []
+		for i in line.strip().split(','):
+			intermediary.append(float(i))
+		final.append(intermediary)
 
-def dataToStaticArray(flattening, radius):
-    with open("../assets/data/fy20_adc_data_file_88_degrees.csv") as datafile:
-        for line in datafile.readlines():
-            data = [float(i) for i in line.strip().split(',')]
-            lat = data[0]
-            lon = data[1]
-            alt = data[2]
-            ls = atan((1 - flattening) ** 2 * tan(alt))
-            x = radius * cos(ls) * cos(lon) + alt * cos(lat) * cos(lon)
-            y = radius * cos(ls) * sin(lon) + alt * cos(lat) * sin(lon)
-            z = radius * sin(ls) + alt * sin(lat)
-            print("{{" + "{}, {}, {}".format(x, y, z) + "}, {0.0, " + str(data[3] / 360) + ", 0.0}, {0.0, 0.0}" + "},")
+string = "#pragma once\n\nconst float[7223208][4] = {\n"
+for datapoint in final:
+	string += "\t{" + "{}, {}, {}, {}".format(datapoint[0], datapoint[1], datapoint[2], datapoint[3]) + "},\n"
+string += "};"
 
-
-dataToStaticArray(0, 100)
+with open("data.hpp", "w") as output:
+	output.write(string)
