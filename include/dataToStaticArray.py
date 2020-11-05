@@ -6,7 +6,7 @@ with open("../assets/data/fy20_adc_data_file_88_degrees.csv") as datafile:
 			intermediary.append(float(i))
 		final.append(intermediary)
 
-string = "#pragma once\n\nconst float[7223208][4] = {\n"
+string = "#pragma once\n\nconst float[7223208][4] originalData = {\n"
 for datapoint in final:
 	string += "\t{" + "{}, {}, {}, {}".format(datapoint[0], datapoint[1], datapoint[2], datapoint[3]) + "},\n"
 string += "};"
