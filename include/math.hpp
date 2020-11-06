@@ -38,7 +38,7 @@ std::vector<float[2]> pathfind(float start[2], float end[2], float maxSlope) {
 		for (int i = 0; i < validNodes.size(); i++) {
 			for (int j = 0; j < closestNodes.size(); j++) {
 				if (distance(validNodes[i], currentNode) < distance(closestNodes[j], currentNode)) {
-					closestNodes.push_front({validNodes[i][0], validNodes[i][1]});
+					closestNodes.insert(closestNodes.begin(), {validNodes[i][0], validNodes[i][1]});
 					if (closestNodes.size() > 7) {
 						closestNodes.pop_back();
 					}

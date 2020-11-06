@@ -9,12 +9,12 @@ def downloadAssets():
         os.mkdir("./assets/data")
         os.mkdir("./assets/textures")
     print("Checking if data has been downloaded...")
-    if os.path.isfile("./assets/data/fy20_adc_data_file_88_degrees.csv"):
+    if os.path.isfile("./assets/data/data.csv"):
         print("Data Already Downloaded")
     else:
         try:
             print("Data not downloaded.")
-            zipurl = 'https://www.nasa.gov/sites/default/files/atoms/files/fy20_adc_data_file_88_degrees.zip'
+            zipurl = 'https://www.nasa.gov/sites/default/files/atoms/files/fy20-adc-regional-data-file-high-precision.zip'
             print("Url: ", zipurl)
             print("Opening Url...")
             zipresp = urlopen(zipurl)
@@ -27,6 +27,7 @@ def downloadAssets():
             zf.extractall(path='./assets/data')
             print("File Written.")
             zf.close()
+            os.rename("./assets/data/FY20 ADC Regional Data File High Precision.csv", "./assets/data/data.csv")
             print("Done.")
         except error as e:
             print(e)
