@@ -4,8 +4,10 @@ import os
 
 if __name__ == '__main__':
     if not (os.path.exists("./external/glm") and os.path.exists("./external/stb") and os.path.exists("./external/imgui")):
+        os.chdir("./external")
         os.system("git submodule init")
         os.system("git submodule update")
+        os.chdir("..")
     if not (os.path.exists("./assets")):
         downloadAssets()
     if not (os.path.exists("./include/verts.hpp")):
