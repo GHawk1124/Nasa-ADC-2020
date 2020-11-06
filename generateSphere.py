@@ -17,6 +17,8 @@ def generateSphere():
     stackStep = math.pi / stackCount;
     sectorAngle, stackAngle = 0, 0
 
+    print("Generating Sphere Points...")
+    
     for i in range(stackCount+1):
         stackAngle = math.pi / 2 - i * stackStep
         xy = r * math.cos(stackAngle)
@@ -42,6 +44,8 @@ def generateSphere():
             t = i / stackCount
             texCoords.append(s)
             texCoords.append(t)
+
+    print("Converting points to C Array...")
 
     cverts = []
     for idx in range(len(vertices)):
@@ -80,7 +84,8 @@ def generateSphere():
                 indices.append(k2 + 1)
 
     def generateCPPstructs(vert, norm, tex):
-        string = "const std::vector<Vertex> vertices = {\n    "
+        print("Writing Array to File...")
+        string = "#pragma once\nconst std::vector<Vertex> vertices = {\n    "
         for idx in range(len(cverts)):
             string += "{{"
             for j in range(len(cverts[idx])):
@@ -106,6 +111,7 @@ def generateSphere():
     file = open("include/verts.hpp", "w")
     file.write(generateCPPstructs(cverts, cnorms, ctexCoords))
     file.close()
+    print("Sphere File Generation Complete.")
 
 if __name__ == '__main__':
     generateSphere()

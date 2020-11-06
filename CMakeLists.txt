@@ -5,11 +5,12 @@ project(nasaAPC)
 set(BIN_NAME "apc")
 set(EXECUTABLE_OUTPUT_PATH "./bin")
 
-file(GLOB SOURCES "src/*.cpp")
-add_subdirectory("./external/imgui")
+file(GLOB SOURCES "src/*.cpp" "external/imgui/*.cpp" "external/imgui/backends/imgui_impl_glfw.cpp" "external/imgui/backends/imgui_impl_vulkan.cpp")
 
 include_directories("./include")
 include_directories("./external")
+include_directories("./external/imgui")
+include_directories("./external/imgui/backends")
 link_directories("/usr/local/lib")
 
 find_package(X11 REQUIRED)

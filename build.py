@@ -1,17 +1,25 @@
 from downloadAssets import *
 from generateSphere import *
 import os
-import shutil
 
 if __name__ == '__main__':
-    if not (os.path.exists("./assets") and os.path.exists("./include/verts.hpp")):
+    if not (os.path.exists("./assets")):
         downloadAssets()
-    generateSphere()
+    if not (os.path.exists("./include/verts.hpp")):
+        generateSphere()
     if os.path.exists("./build"):
-        shutil.rmtree("./build")
-    os.mkdir("build")
-    os.chdir("./build")
-    os.system("cmake ..")
-    os.system("make")
-    os.system("./bin/apc")
-    os.chdir("..")
+        os.chdir("./build")
+        if os.path.exists("./build/CMakeFiles"):
+            os.system("make")
+        else:
+            os.system("cmake -DCMAKE_BUILD_TYPE=debug ..")
+            os.system("make")
+        os.system("./bin/apc")
+        os.chdir("..")
+    else:
+        os.mkdir("build")
+        os.chdir("./build")
+        os.system("cmake -DCMAKE_BUILD_TYPE=debug ..")
+        os.system("make")
+        os.system("./bin/apc")
+        os.chdir("..")
