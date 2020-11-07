@@ -60,7 +60,8 @@ std::vector<float[2]> pathfind(float start[2], float end[2], float maxSlope) {
 		}
 
 		finalPath.push_back(closestNodes[bestNodeIndex]);
-		currentNode = closestNodes[bestNodeIndex];
+		currentNode[0] = closestNodes[bestNodeIndex][0];
+		currentNode[1] = closestNodes[bestNodeIndex][1];
 	}
 
 	return finalPath;
