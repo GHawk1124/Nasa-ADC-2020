@@ -7,14 +7,14 @@
 inline void showGui() {
     //create a window called "Settings" and add stuff to it
     ImGui::Begin("Settings");
-    static int slope = 15;
+    static int max_slope = 15;
     static int distance = 0;
-
+    static int min_slope = 0;
     //create a collapsing dropdown inside the window
     if (ImGui::CollapsingHeader("Pathfinding Controls")) {
         //sliders to control pathfinding algorithm params
-        ImGui::SliderInt("Max slope angle", &slope, 5, 40, "%f°");
-        ImGui::SliderInt("Min slope angle", &slope, 0, 35, "%f°");
+        ImGui::SliderInt("Max slope angle", &max_slope, 5, 40, "%f°");
+        ImGui::SliderInt("Min slope angle", &max_slope, 0, 35, "%f°");
         ImGui::SliderInt("Max checkpoint distance", &distance, 0, 50, "%fm");
         ImGui::Button("Recompute path");
         ImGui::SameLine();
