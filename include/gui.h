@@ -14,6 +14,7 @@ inline void showGui() {
     if (ImGui::CollapsingHeader("Pathfinding Controls")) {
         //sliders to control pathfinding algorithm params
         ImGui::SliderInt("Max slope angle", &slope, 5, 40, "%f°");
+        ImGui::SliderInt("Min slope angle", &slope, 0, 35, "%f°");
         ImGui::SliderInt("Max checkpoint distance", &distance, 0, 50, "%fm");
         ImGui::Button("Recompute path");
         ImGui::SameLine();
