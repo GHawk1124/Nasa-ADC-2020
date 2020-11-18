@@ -37,3 +37,9 @@ Use the provided CMakeLists.txt with [CMake](https://cmake.org) to generate a bu
 cmake .
 make
 ```
+
+## Acknowledgements
+Huge thanks to Sascha Williams for providing an amazing place to start with his [Vulkan Examples](https://github.com/SaschaWillems/Vulkan)!
+Huge thanks to LunarG for creating this wonderful software for us to use and their helpful [Vulkan Tutorial](https://vulkan-tutorial.com/)!
+Thanks to our Mentors for helping us have this opportunity!
+Finally, thanks to Nasa for hosting this event to help further our knowledge!
