@@ -16,7 +16,7 @@
 #include <ktx.h>
 #include <ktxvulkan.h>
 
-#define ENABLE_VALIDATION true
+#define ENABLE_VALIDATION false
 
 class VulkanExample : public VulkanExampleBase
 {
