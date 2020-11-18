@@ -8,6 +8,9 @@ This project utilizes low level libraries such as the windows api, wayland, vulk
 
 ## Screenshots
 
+<img src="./screenshots/MoonVisualization.png" alt="" height="128px">
+<img src="./screenshots/MoonVisualizationTesselation.png" alt="" height="128px">
+
 ## Building
 
 Project files for any IDE can be generated through cmake.
