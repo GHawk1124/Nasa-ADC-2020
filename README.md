@@ -12,7 +12,7 @@ This project utilizes low level libraries such as the windows api, wayland, vulk
 
 Project files for any IDE can be generated through cmake.
 ```
-git clone --recursive https://github.com/GHawk1124/Nasa-ADC-2020-RMHS.git
+git clone https://github.com/GHawk1124/Nasa-ADC-2020-RMHS.git
 cd Nasa-ADC-2020-RMHS/
 ```
 
