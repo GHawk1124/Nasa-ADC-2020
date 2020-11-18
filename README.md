@@ -19,15 +19,15 @@ Although our project may not be entirely developed yet, the increased developeme
 
 Project files for any IDE can be generated through cmake.
 ```
-git clone --recursive https://github.com/GHawk1124/Nasa-ADC-2020-RMHS.git
-cd Nasa-ADC-2020-RMHS/
+git clone --recursive https://github.com/GHawk1124/Nasa-ADC-2020.git
+cd Nasa-ADC-2020/
 ```
 
 ### Windows
 
 Use the provided CMakeLists.txt with [CMake](https://cmake.org) to generate a build configuration for your favorite IDE or compiler, e.g.:
 ```
-cmake . -G "Visual Studio 14 2015 Win64"
+cmake . -G "Visual Studio 16 2019"
 ```
 
 ### Mac
