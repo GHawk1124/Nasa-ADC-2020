@@ -41,7 +41,8 @@ cmake . -G "Xcode"
 
 Use the provided CMakeLists.txt with [CMake](https://cmake.org) to generate a build configuration for your favorite IDE or compiler, e.g.:
 ```
-cmake .
+mkdir build && cd build
+cmake .. -DCMAKE_BUILD_TYPE=release
 make
 ```
 
